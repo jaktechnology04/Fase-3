@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round" rel="stylesheet" />
+<link href="visual.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+   <body>
+<div id="Div1">
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="Inicio.aspx">Peluqueria A&C.</a></h1>
+				<p>Design by <a href="http://templated.co" rel="nofollow">Jak' Technology</a></p>
+			</div>
+			<div id="social">
+				<ul class="contact">
+					<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+					<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+					<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+                    <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+				</ul>
+			</div>
+		</div>
+		<div id="menu" class="container">
+			<ul>
+				<li class="current_page_item"><a href="Inicio.aspx" accesskey="1" title="">Inicio</a></li>
+				<li><a href="Productos.aspx" accesskey="1" title="">Productos</a></li>
+				<li><a href="Servicios.aspx" accesskey="2" title="">Servicios</a> </li>
+
+				<li><a href="Contactenos.aspx" accesskey="3" title="">Contacto</a></li>
+				<li><a href="Quienes somos.aspx" accesskey="4" title="">Acerca de Nosotros</a></li>
+                <li><a href="iniciar%20sesion%20administrador.aspx" accesskey="4" title="">Administrador</a></li>
+				<li><a href="#" accesskey="5" title=""></a></li>
+			</ul>
+		</div>
+	</div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+      <div id="footer">
+	<p>&copy; JAK' TECHNOLOGY. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+</div>
+    </div>
+    </form>
+</body>
+</html>
